@@ -1,0 +1,23 @@
+@startuml warehouse_memory_model
+title How Warehouse holds knowledge
+left to right direction
+skinparam shadowing false
+skinparam backgroundColor #17242b
+skinparam defaultFontColor #e8edf0
+skinparam titleFontColor #aee5df
+skinparam ArrowColor #aee5df
+skinparam ArrowFontColor #e8edf0
+skinparam artifact {
+  BackgroundColor #1b323b
+  BorderColor #456b72
+  FontColor #e8edf0
+}
+artifact "Dated logs\nEvents and evidence" as Log
+artifact "Flat cards\nEvidence-linked claims" as Card
+artifact "Curated indexes\nTopic entry points" as Index
+artifact "Live retrieval views\nSelection rules" as View
+Card --> Log : links to evidence
+Card ..> Card : related claims
+Index ..> Card : curated links
+View ..> Card : selects records
+@enduml
