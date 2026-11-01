@@ -31,7 +31,12 @@ def public_body(path):
         keys = [key.value for key, _ in node.value if isinstance(key, yaml.ScalarNode) and key.value == 'visibility']
         if keys != ['visibility'] or metadata.get('visibility') != 'public':
             return None
-        return ''.join(lines[end + 1:])
+        tags = metadata.get('tags', [])
+        if isinstance(tags, str):
+            tags = [tags]
+        if not isinstance(tags, list):
+            tags = []
+        return ''.join(lines[end + 1:]), [tag for tag in tags if isinstance(tag, str) and tag.strip()]
     except (StopIteration, yaml.YAMLError):
         return None
 
@@ -39,7 +44,7 @@ def public_body(path):
 def page(title, content, prefix=''):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)} · Memory Warehouse</title><link rel="stylesheet" href="{prefix}style.css"></head>
+<title>{html.escape(title)} · Memory Warehouse</title><link rel="stylesheet" href="{prefix}style.css"><link rel="stylesheet" href="{prefix}tags.css"></head>
 <body>{content}</body></html>\n'''
 
 
@@ -49,7 +54,7 @@ def build():
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     OUTPUT.mkdir()
-    for asset in ('style.css', 'site.js'):
+    for asset in ('style.css', 'tags.css', 'site.js'):
         shutil.copyfile(ROOT / 'site' / asset, OUTPUT / asset)
     assets = ROOT / 'site' / 'assets'
     if assets.exists():
@@ -65,9 +70,10 @@ def build():
         if not directory.exists():
             continue
         for path in sorted(directory.rglob('*.md'), reverse=(kind == 'logs')):
-            body = public_body(path)
-            if body is None:
+            record = public_body(path)
+            if record is None:
                 continue
+            body, tags = record
             relative = path.relative_to(ROOT).with_suffix('.html')
             target = OUTPUT / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -75,6 +81,13 @@ def build():
             title = heading.group(1) if heading else path.stem.replace('-', ' ')
             rendered = subprocess.run(['pandoc', '--from=markdown-raw_html', '--to=html5'], input=body, text=True, capture_output=True, check=True).stdout
             rendered = re.sub(r'(href="[^"#?]*?)\.md(?=[#?\"])', r'\1.html', rendered)
+            if tags:
+                pills = '<div class="record-tags" aria-label="Tags">' + ''.join(
+                    f'<span class="tag">{html.escape(tag)}</span>' for tag in tags) + '</div>'
+                if '</h1>' in rendered:
+                    rendered = rendered.replace('</h1>', '</h1>' + pills, 1)
+                else:
+                    rendered = pills + rendered
             prefix = '../' * len(relative.parent.parts)
             content = f'<header class="record-header"><a href="{prefix}index.html" target="_top">← Memory Warehouse</a><span>{kind.upper()}</span></header><main class="record">{rendered}</main>'
             target.write_text(page(title, content, prefix), encoding='utf-8')

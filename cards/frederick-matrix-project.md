@@ -21,7 +21,6 @@ card_visibility_basis: high-level description reviewed for public projection
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Frederick Matrix is a self-hosted Matrix mesh for the local tech community
 

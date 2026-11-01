@@ -13,7 +13,6 @@ created: 2026-09-16 01:36:09+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Voice dictation can introduce transcription ambiguity
 

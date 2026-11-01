@@ -14,7 +14,6 @@ created: 2026-09-16 00:00:00+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Agent memory retains the context and scope of a correction
 

@@ -9,7 +9,6 @@ related:
 - ./fine-tuning-break-even-visuals.md
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Code-rendered visuals keep source, not PNG previews
 

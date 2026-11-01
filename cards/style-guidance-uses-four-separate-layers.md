@@ -15,7 +15,6 @@ review_after: 2026-12-16 00:00:00+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Style guidance uses separate defaults, templates, scoped feedback, and evaluations
 

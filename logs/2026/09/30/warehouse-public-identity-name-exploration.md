@@ -8,7 +8,6 @@ tags:
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Warehouse name may not fit its emerging public identity
 

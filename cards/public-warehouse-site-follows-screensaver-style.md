@@ -19,7 +19,6 @@ created: 2026-10-10 02:13:40+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Public Warehouse site's intended style follows the screensaver
 

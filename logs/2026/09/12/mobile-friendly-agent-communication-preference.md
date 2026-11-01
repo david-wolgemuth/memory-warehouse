@@ -4,7 +4,6 @@ source: user statement in this conversation
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # David prefers short, linked, mobile-friendly agent replies
 

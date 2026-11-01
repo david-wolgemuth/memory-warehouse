@@ -12,7 +12,6 @@ related:
 - ./log-topic-drift-and-tangent-boundary.md
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Log immutability and topic segmentation are separate card concepts
 

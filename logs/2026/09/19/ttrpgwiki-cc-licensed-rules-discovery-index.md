@@ -10,7 +10,6 @@ related:
 - ../../../../cards/dmsim-uses-rule-system-inspirations-without-adopting-their-rules.md
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # TTRPG Wiki CC-licensed rules discovery index
 

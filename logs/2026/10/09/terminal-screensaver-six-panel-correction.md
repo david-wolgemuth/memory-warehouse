@@ -9,7 +9,6 @@ tags:
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Six portrait panels belong in the terminal screensaver
 

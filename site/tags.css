@@ -1,0 +1,16 @@
+.record-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: .75rem 0 1.25rem;
+}
+
+.record-tags .tag {
+  border: 1px solid #456b72;
+  border-radius: 999px;
+  color: #aee5df;
+  background: #1b323b;
+  font-size: .72rem;
+  line-height: 1.25;
+  padding: .25rem .6rem;
+}

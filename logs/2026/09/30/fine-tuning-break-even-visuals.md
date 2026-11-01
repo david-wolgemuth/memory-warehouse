@@ -11,7 +11,6 @@ related:
 - ./rag-and-small-company-fine-tuning-economics.md
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Visualizing fine-tuning break-even under a Luna-class price target
 

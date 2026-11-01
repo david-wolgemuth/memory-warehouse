@@ -11,7 +11,6 @@ created: 2026-09-29 00:00:00+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Agent replies use helpful visuals for relationships and space
 

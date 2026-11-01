@@ -21,7 +21,6 @@ created: 2026-10-10 01:57:27+00:00
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Warehouse screensaver is a read-only terminal view
 

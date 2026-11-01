@@ -8,7 +8,6 @@ tags:
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # Memory Engine is a promising name and pulp visuals may support it
 

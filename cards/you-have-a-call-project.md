@@ -20,7 +20,6 @@ card_visibility_basis: public repository README and source
 visibility: public
 ---
 
-> Some links or assets are omitted from this public edition. References to omitted files and commands using them apply to the private source.
 
 # You Have a Call is a macOS meeting alert that deliberately takes focus
 
